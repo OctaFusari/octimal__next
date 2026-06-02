@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --teal: #00C9A7;
-  --purple: #7B4FD8;
+  --teal: #007E6D;
+  --purple: #FF00E5;
   --dark: #0A0A0A;
   --dark2: #111111;
   --dark3: #181818;
@@ -49,7 +49,7 @@ body {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(0, 201, 167, 0.45);
+  border: 1px solid #007e6d7e;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -67,7 +67,7 @@ body.cursor-hover .cursor-dot {
 body.cursor-hover .cursor-ring {
   width: 56px;
   height: 56px;
-  border-color: rgba(123, 79, 216, 0.55);
+  border-color: #ff00e683;
 }
 
 /* ── Noise overlay ── */
@@ -88,7 +88,7 @@ body::after {
 ::-webkit-scrollbar-thumb:hover { background: rgba(0, 201, 167, 0.5); }
 
 /* ── Selection ── */
-::selection { background: rgba(0, 201, 167, 0.2); color: var(--light); }
+::selection { background: #007e6d2f; color: var(--light); }
 
 /* ── Gradient text util ── */
 .gradient-text {
@@ -123,11 +123,11 @@ body::after {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0rem;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(0, 201, 167, 0.2);
+  border: 1px solid #007e6d2f;
   color: var(--light);
-  padding: 0.85rem 2rem;
+  padding: 0.85rem 1.25rem;
   border-radius: 3rem;
   font-family: var(--font-outfit), sans-serif;
   font-size: 0.9rem;
@@ -138,26 +138,26 @@ body::after {
 }
 
 .btn-primary:hover {
-  background: rgba(0, 201, 167, 0.08);
+  background: #007e6d2f;
   border-color: var(--teal);
 }
 
 .btn-primary .arrow-circle {
-  width: 30px;
-  height: 30px;
-  background: var(--teal);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
+  background: white;
   align-items: center;
   justify-content: center;
-  color: #0A0A0A;
-  font-size: 0.9rem;
+  color: #242424;
   transition: transform 0.3s;
   flex-shrink: 0;
+  transform: translateX(20px) rotate(0deg);
 }
 
 .btn-primary:hover .arrow-circle {
-  transform: translateX(3px) rotate(-45deg);
+  transform: translateX(30px) rotate(0deg);
 }
 
 /* ── Card hover border ── */
@@ -165,7 +165,7 @@ body::after {
   transition: border-color 0.35s, transform 0.35s;
 }
 .card-hover:hover {
-  border-color: rgba(0, 201, 167, 0.22);
+  border-color: #007e6d2f;
   transform: translateY(-4px);
 }
 
@@ -173,7 +173,7 @@ body::after {
 .hr-gradient {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 201, 167, 0.2), rgba(123, 79, 216, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, #007e6d2f, #ff00e645, transparent);
 }
 
 /* ── Three.js canvas container ── */

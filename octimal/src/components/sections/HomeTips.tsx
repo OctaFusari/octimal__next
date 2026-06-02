@@ -8,26 +8,26 @@ const TIPS = [
   {
     num: '01',
     title: 'Cognitive Load',
-    headline: '4 chunk, non 7.',
-    body: 'La working memory ha una capacità di ~4 elementi. In sistemi complessi ogni elemento aggiuntivo ha un costo reale. Raggruppa, gerarchizza, elimina.',
+    headline: '4 chunks, not 7.',
+    body: 'Working memory has a capacity of about 4 items. In complex systems, each additional item comes at a real cost. Group, prioritize, and eliminate.',
   },
   {
     num: '02',
-    title: 'Gestalt & Prossimità',
-    headline: 'La distanza è grammatica.',
-    body: 'Elementi vicini vengono percepiti come correlati. Raggruppare visivamente riduce il tempo di lettura fino al 35% su dashboard complesse.',
+    title: '4 chunks, not 7',
+    headline: 'The distance is grammar.',
+    body: 'Close elements are perceived as related. Visually grouping reduces reading time by up to 35% on complex dashboards.',
   },
   {
     num: '03',
     title: 'Error Prevention',
-    headline: 'Rendi l\'errore impossibile.',
-    body: 'La vera eccellenza non è gestire gli errori elegantemente — è prevenirli attraverso vincoli, affordance e feedback proattivo.',
+    headline: 'Make the error impossible.',
+    body: 'The true excellence is not to manage errors elegantly — but to prevent them through constraints, affordances, and proactive feedback.',
   },
   {
     num: '04',
     title: 'Situational Awareness',
-    headline: 'Modello mentale = realtà.',
-    body: "Endsley's SA Model: percezione, comprensione, proiezione. Se l'interfaccia rompe anche uno di questi livelli, l'errore è già avvenuto.",
+    headline: 'Make the error impossible',
+    body: "ENdsley's SA Model: perception, comprehension, projection. If the interface fails at even one of these levels, the error has already occurred.",
   },
 ]
 
@@ -50,7 +50,7 @@ export default function HomeTips() {
             <p className="section-label" style={{ marginBottom: '1.5rem' }}>UX/UI Tips</p>
           </AnimateInView>
           <SplitText
-            text="Principi che fanno la differenza"
+            text="See some of the rules that help us make your dreams come true"
             tag="h2"
             once={false}
             style={{
@@ -90,7 +90,7 @@ export default function HomeTips() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-                style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--teal), var(--purple))', transformOrigin: 'left' }}
+                style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'color: var(--teal)', transformOrigin: 'left' }}
               />
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--teal)', marginBottom: '1.5rem' }}>{tip.num} — {tip.title}</p>
               <h3 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 600, fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--light)', lineHeight: 1.3 }}>{tip.headline}</h3>
