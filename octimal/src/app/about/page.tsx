@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import AnimateInView from '@/components/ui/AnimateInView'
 import SplitText from '@/components/ui/SplitText'
 import { fadeUp, fadeLeft, fadeRight, scaleIn, staggerContainer } from '@/lib/motionVariants'
+import heroBgImage from '@/styles/images/1e7b1a97-f84f-46fb-a1c6-b620b484cd0c.png'
 
 const ThreeRings = dynamic(() => import('@/components/three/ThreeRings'), { ssr: false })
 
@@ -14,27 +15,19 @@ const ABOUT_RINGS = [
 ]
 
 const TIMELINE = [
-  { year: '2011', title: 'Fondazione a Trento', body: 'Nasce OCTIMAL da un incrocio improbabile: ingegneria cognitiva, design e montagna. Il pensiero non lineare come metodo fondante.' },
-  { year: '2014', title: 'Primo progetto HMI critico', body: 'Lavoriamo al redesign di un sistema di controllo per impianti industriali. Scopriamo che la complessità vera è sempre umana.' },
-  { year: '2017', title: 'Espansione internazionale', body: 'I nostri metodi attraversano i confini. Progetti in Germania, Svizzera, Scandinavia. Il rigore trentino incontra scale diverse.' },
-  { year: '2020', title: 'Human Factors Lab', body: 'Apriamo un laboratorio dedicato: eye-tracking, biometrics, simulazioni operative. La ricerca diventa infrastruttura.' },
-  { year: '2023', title: 'Focus Africa', body: 'Una scelta consapevole. L\'Africa è dove il design può ancora ridefinire sistemi interi. Sanità, mobilità, energia. Siamo qui.' },
+  { year: '2020', title: 'Founded in Trentino', body: 'OCTIMAL was born from a rare intersection: cognitive engineering, design, and the mountains. Non-linear thinking became the founding method.' },
+  { year: '2021', title: 'First project', body: 'We started by working on little project for a local clients, using the ux to increase the quality of the interaction between them and the clients' },
+  { year: '2023', title: 'Study and research', body: 'We understand the importance of rigorous research and deep study of the human factor in creating effective solutions.' },
+  { year: '2025', title: 'Adding complexity', body: 'We had to navigate increasingly complex challenges as our projects grew in scope and impact.' },
+  { year: '2026', title: 'World focus', body: 'A strategic choice. We want to work on a global scale to understand and be part of the world that is changing.' },
 ]
 
 const VALUES = [
-  { icon: '◈', title: 'Pensiero non lineare', body: 'Non seguiamo il brief. Seguiamo il problema. Le soluzioni migliori emergono quando si sfidano le premesse iniziali.' },
-  { icon: '◎', title: 'Rigore come cura', body: 'La ricerca non è un optional. È il rispetto che dobbiamo alle persone che useranno ciò che progettiamo.' },
-  { icon: '◉', title: 'Creatività sistemica', body: 'L\'estetica serve la funzione, non il portfolio. Un\'interfaccia bella che non funziona è solo rumore elegante.' },
-  { icon: '◍', title: 'Radicati, aperti', body: 'Trentini nell\'anima, globali nella mente. La nostra identità alpina ci insegna che i confini non limitano — orientano.' },
+  { icon: '◈', title: 'Non-linear thinking', body: 'We do not follow the brief. We follow the problem. The best solutions emerge when initial assumptions are challenged.' },
+  { icon: '◎', title: 'Rigor as care', body: 'Research is not optional. It is the respect we owe the people who will use what we design.' },
+  { icon: '◉', title: 'Systemic creativity', body: 'Aesthetics serves function, not the portfolio. A beautiful interface that does not work is just elegant noise.' },
+  { icon: '◍', title: 'Rooted, open', body: 'Rooted in Trentino, global in mindset. Our alpine identity teaches us that borders do not limit — they orient.' },
 ]
-
-const TEAM = [
-  { initials: 'MS', name: 'Marco S.', role: 'Founder & HF Engineer', bio: 'Dottorato in Ergonomia Cognitiva. 15 anni su sistemi critici.' },
-  { initials: 'AL', name: 'Anna L.', role: 'Lead UX Researcher', bio: 'Ex CNR. Specializzata in metodi etnografici e sistemi sanitari.' },
-  { initials: 'FK', name: 'Fatima K.', role: 'Africa Partnerships', bio: 'Nairobi — Trento. Bridge tra mercati emergenti e rigore europeo.' },
-  { initials: 'DT', name: 'Davide T.', role: 'Interaction Designer', bio: 'Premio ADI. Design di sistemi complessi come pratica artistica.' },
-]
-
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
@@ -46,17 +39,24 @@ export default function AboutPage() {
 
       {/* ─── HERO ─── */}
       <section ref={heroRef} className="relative min-h-screen flex items-end pb-24 overflow-hidden" style={{ paddingTop: '8rem' }}>
-        <div className="absolute inset-0">
-          <ThreeRings configs={ABOUT_RINGS} />
-        </div>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 15% 60%, rgba(10,10,10,0.9) 0%, transparent 65%)', pointerEvents: 'none' }} />
+      {/* Three.js rings */}
+      <div className="absolute inset-0">
+        <ThreeRings
+          className="opacity-80"
+          scrollY={scrollY}
+          scrollInfluence={0.003}
+        />
+      </div>
+        {/* <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 15% 60%, rgba(10,10,10,0.9) 0%, transparent 65%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '50%', backgroundImage: `url(${heroBgImage.src})`, backgroundSize: 'cover', backgroundPosition: 'right', opacity: 0.25, pointerEvents: 'none' }} />
+ */}        <div style={{ position: 'absolute', inset: 0, width: '50%', background: 'linear-gradient(90deg, transparent 0%, rgba(32, 31, 31, 0.7) 100%)', pointerEvents: 'none' }} />
 
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 px-[10vw] w-full">
           <AnimateInView variants={fadeUp}>
-            <p className="section-label mb-8">Chi siamo</p>
+            <p className="section-label mb-8">About us</p>
           </AnimateInView>
           <SplitText
-            text="Un studio che pensa in modo non lineare."
+            text="A studio that thinks non-linearly."
             tag="h1"
             once={false}
             style={{
@@ -71,7 +71,7 @@ export default function AboutPage() {
           />
           <AnimateInView variants={fadeUp} delay={0.4} className="mt-8">
             <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '1.05rem', color: 'var(--muted)', lineHeight: 1.85, maxWidth: '520px', fontWeight: 300 }}>
-              Nati a Trento tra le Dolomiti. Cresciuti su sistemi complessi. Orientati verso l'Africa. OCTIMAL è uno studio di design che non accetta le domande così come vengono.
+              Born in Trento amidst the Dolomites. Raised on complex systems. Focused on the world. OCTIMAL is a design studio that does not accept questions as they are asked.
             </p>
           </AnimateInView>
         </motion.div>
@@ -87,9 +87,9 @@ export default function AboutPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
-            <AnimateInView variants={fadeUp}><p className="section-label mb-6">Il nostro approccio</p></AnimateInView>
+            <AnimateInView variants={fadeUp}><p className="section-label mb-6">Our approach</p></AnimateInView>
             <SplitText
-              text="Il design migliore nasce dove la creatività incontra il rigore scientifico."
+              text="The best design is born where creativity meets scientific rigor."
               tag="h2"
               once={false}
               style={{
@@ -105,10 +105,10 @@ export default function AboutPage() {
           <AnimateInView variants={fadeRight}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.9 }}>
-                Non siamo una tradizionale agenzia di design. Siamo un ibrido: parte laboratorio di ricerca, parte studio creativo, parte consulenza strategica.
+                We are not a traditional design agency. We are a hybrid: part research lab, part creative studio, part strategic consultancy.
               </p>
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.9 }}>
-                Il nostro pensiero non lineare non è un claim: è il metodo con cui affrontiamo ogni problema. Le domande più interessanti non hanno risposte diritte.
+                Our non-linear thinking is not a claim: it is the method we use to tackle every problem. The most interesting questions rarely have straight answers.
               </p>
               <motion.blockquote
                 initial={{ opacity: 0, borderLeftColor: 'transparent' }}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 style={{ borderLeft: '2px solid var(--teal)', paddingLeft: '1.5rem', margin: '0.5rem 0' }}
               >
                 <p style={{ fontFamily: 'var(--font-montserrat)', fontSize: '1.1rem', fontStyle: 'italic', color: 'var(--light)', lineHeight: 1.6, fontWeight: 300 }}>
-                  "I sistemi complessi richiedono menti che non abbiano paura della complessità."
+                  "Complex systems require minds that are not afraid of complexity."
                 </p>
               </motion.blockquote>
             </div>
@@ -128,9 +128,9 @@ export default function AboutPage() {
 
       {/* ─── VALUES ─── */}
       <section style={{ background: 'var(--dark)', padding: '10rem 10vw' }}>
-        <AnimateInView variants={fadeUp}><p className="section-label mb-6">I nostri valori</p></AnimateInView>
+        <AnimateInView variants={fadeUp}><p className="section-label mb-6">Our values</p></AnimateInView>
         <SplitText
-          text="Cosa ci muove ogni giorno"
+          text="What drives us every day"
           tag="h2"
           once={false}
           style={{
@@ -167,9 +167,9 @@ export default function AboutPage() {
 
       {/* ─── TIMELINE ─── */}
       <section style={{ background: 'var(--dark2)', padding: '10rem 10vw', position: 'relative', overflow: 'hidden' }}>
-        <AnimateInView variants={fadeUp}><p className="section-label mb-4">La nostra storia</p></AnimateInView>
+        <AnimateInView variants={fadeUp}><p className="section-label mb-4">Our story</p></AnimateInView>
         <SplitText
-          text="Vent'anni in cinque momenti"
+          text="Twenty years in five moments"
           tag="h2"
           once={false}
           style={{
@@ -215,55 +215,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── TEAM ─── */}
-      <section style={{ background: 'var(--dark)', padding: '10rem 10vw' }}>
-        <AnimateInView variants={fadeUp}><p className="section-label mb-4">Il team</p></AnimateInView>
-        <SplitText
-          text="Le persone dietro OCTIMAL"
-          tag="h2"
-          once={false}
-          style={{
-            fontFamily: 'var(--font-montserrat)',
-            fontWeight: 300,
-            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-            letterSpacing: '-0.02em',
-            color: 'var(--light)',
-            marginBottom: '5rem',
-          } as React.CSSProperties}
-        />
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}
-        >
-          {TEAM.map((member) => (
-            <motion.div
-              key={member.initials}
-              variants={scaleIn}
-              whileHover={{ borderColor: 'rgba(0,201,167,0.22)', y: -6 }}
-              style={{ background: 'var(--dark3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '1.5rem', padding: '2.5rem', cursor: 'none', transition: 'border-color 0.35s, transform 0.35s' }}
-            >
-              <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(0,201,167,0.15), rgba(123,79,216,0.15))', border: '1px solid rgba(0,201,167,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-                <span style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 700, fontSize: '0.9rem', background: 'linear-gradient(135deg, var(--teal), var(--purple))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{member.initials}</span>
-              </div>
-              <h4 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 600, fontSize: '1rem', color: 'var(--light)', marginBottom: '0.3rem' }}>{member.name}</h4>
-              <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.75rem', color: 'var(--teal)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem' }}>{member.role}</p>
-              <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.85rem', color: 'var(--muted)', lineHeight: 1.75 }}>{member.bio}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* ─── AFRICA FOCUS ─── */}
+      {/* ─── WHY WE CREATED IT ─── */}
       <section style={{ background: 'var(--dark2)', padding: '10rem 10vw', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, right: 0, width: '50%', height: '100%', background: 'radial-gradient(ellipse at 80% 50%, rgba(0,201,167,0.05) 0%, transparent 60%)', pointerEvents: 'none' }} />
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
-            <AnimateInView variants={fadeUp}><p className="section-label mb-6">Focus attuale</p></AnimateInView>
+            <AnimateInView variants={fadeUp}><p className="section-label mb-6">Why we created it</p></AnimateInView>
             <SplitText
-              text="Perché l'Africa"
+              text="A studio built for deep creativity and complexity"
               tag="h2"
               once={false}
               style={{
@@ -278,10 +237,10 @@ export default function AboutPage() {
             />
             <AnimateInView variants={fadeUp} delay={0.2}>
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.9, marginBottom: '1.5rem' }}>
-                Perché è il continente dove il design può ancora definire sistemi interi dall'inizio. Non ottimizzare l'esistente — immaginare qualcosa di nuovo.
+                There was no real studio in Trentino that combined creative curiosity, deep systems complexity, and UX/UI & factor engineering with a global outlook.
               </p>
               <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.95rem', color: 'var(--muted)', lineHeight: 1.9 }}>
-                Lavoriamo con organizzazioni locali in Kenya, Ruanda, Ghana su sistemi sanitari, mobile banking e infrastrutture digitali. Il rigore dei metodi europei, l'umiltà di imparare da contesti radicalmente diversi.
+                We chose to sit down and build it ourselves, so that if you want to truly embrace your product and your activity, we are the number one choice.
               </p>
             </AnimateInView>
           </div>
@@ -293,19 +252,19 @@ export default function AboutPage() {
             style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
           >
             {[
-              { country: 'Kenya', focus: 'Sistemi sanitari rurali', color: 'var(--teal)' },
-              { country: 'Ruanda', focus: 'Mobile health & fintech', color: 'var(--purple)' },
-              { country: 'Ghana', focus: 'Infrastrutture digitali', color: 'var(--teal)' },
+              { title: 'Creative depth', description: 'We bring a rare design eye to every system problem.', color: 'var(--teal)' },
+              { title: 'Systemic rigor', description: 'We handle complexity without losing clarity.', color: 'var(--purple)' },
+              { title: 'UX & Factor engineering', description: 'We build products that are useful, usable, and meaningful.', color: 'var(--teal)' },
             ].map((item) => (
               <motion.div
-                key={item.country}
+                key={item.title}
                 variants={fadeLeft}
                 whileHover={{ x: 8, borderColor: item.color }}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem 2rem', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '0.75rem', cursor: 'none', transition: 'border-color 0.3s, transform 0.3s' }}
               >
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 600, fontSize: '1rem', color: 'var(--light)', marginBottom: '0.25rem' }}>{item.country}</h4>
-                  <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.8rem', color: 'var(--muted)' }}>{item.focus}</p>
+                  <h4 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 600, fontSize: '1rem', color: 'var(--light)', marginBottom: '0.25rem' }}>{item.title}</h4>
+                  <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.8rem', color: 'var(--muted)' }}>{item.description}</p>
                 </div>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: item.color, flexShrink: 0, boxShadow: `0 0 12px ${item.color}` }} />
               </motion.div>

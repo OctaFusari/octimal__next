@@ -54,7 +54,7 @@ export default function HomeHero() {
       {/* Content */}
       <motion.div
         style={{ y: heroY, opacity: heroOpacity }}
-        className="relative z-10 px-[8vw] max-w-[780px]"
+        className="relative z-10 px-[8vw] "
       >
         {/* Eyebrow 
         <AnimateInView variants={fadeUp} delay={0.1}>
@@ -62,9 +62,9 @@ export default function HomeHero() {
         </AnimateInView>*/}
 
         {/* Headline */}
-        <div className="mb-6">
+        <div>
           <SplitText
-            text="Developing dreams"
+            text="Developing"
             tag="h1"
             once={false}
             delay={0.15}
@@ -74,7 +74,25 @@ export default function HomeHero() {
                 fontFamily: "var(--font-montserrat)",
                 fontSize: "clamp(3rem, 7.5vw, 6rem)",
                 fontWeight: 300,
-                lineHeight: 1.2,
+                letterSpacing: "-0.025em",
+                lineHeight: 1.1,
+              } as React.CSSProperties
+            }
+          />
+        </div>
+        <div className="mb-6">
+          <SplitText
+            text="dreams"
+            tag="h1"
+            once={false}
+            delay={0.15}
+            className="text-light"
+            style={
+              {
+                fontFamily: "var(--font-montserrat)",
+                fontSize: "clamp(3rem, 7.5vw, 6rem)",
+                fontWeight: 300,
+                lineHeight: 1.1,
                 letterSpacing: "-0.025em",
               } as React.CSSProperties
             }
@@ -175,9 +193,9 @@ export default function HomeHero() {
         className="absolute bottom-10 right-[10vw] z-10 flex gap-10"
       >
         {[
-          ["12+", "Anni"],
-          ["80+", "Progetti"],
-          ["6", "Settori"],
+          ["3+", "continents"],
+          ["20+", "projects"],
+          ["6", "sectors"],
         ].map(([n, l]) => (
           <div key={l} style={{ textAlign: "right" }}>
             <div

@@ -9,7 +9,7 @@ import { fadeUp, fadeLeft, fadeRight, scaleIn, staggerContainer } from '@/lib/mo
 const ThreeRings = dynamic(() => import('@/components/three/ThreeRings'), { ssr: false })
 
 const SECTOR_RINGS = [
-  { position: [4.5, 1.5, -2] as [number,number,number], rotation: [0.5, 0.3, -0.4] as [number,number,number], scale: 1.2, speedX: 0.004, speedY: 0.003, speedZ: 0.005, tubeRadius: 0.08, color1: '#00C9A7', color2: '#7B4FD8', floatAmp: 0.2, floatFreq: 0.55, phase: 1 },
+  { position: [4.5, 1.5, -2] as [number,number,number], rotation: [0.5, 0.3, -0.4] as [number,number,number], scale: 1.2, speedX: 0.004, speedY: 0.003, speedZ: 0.005, tubeRadius: 0.08, color1: '#00C9A7', color2: '#7B4FD8', floatAmp: 0.2, floatFreq: 0.55, phase: 1, bakeRotX: 0, bakeRotY: 0, bakeRotZ: 0, radius: 2 },
 ]
 
 const SECTORS = [
@@ -17,96 +17,96 @@ const SECTORS = [
     id: 'aviation',
     num: '01',
     icon: '✈',
-    name: 'Aviazione & Difesa',
+    name: 'Aviation & Defense',
     tag: 'Safety-critical',
-    headline: 'Dove un errore di interfaccia può costare vite.',
-    body: 'Progettiamo sistemi di controllo, cockpit interfaces e HMI per ambienti ad altissima pressione operativa. Il nostro approccio Human Factors riduce gli errori latenti prima che diventino incidenti.',
+    headline: 'Where an interface error can cost lives.',
+    body: 'We design control systems, cockpit interfaces, and HMIs for environments under extreme operational pressure. Our Human Factors approach reduces latent errors before they become incidents.',
     impact: [
-      { metric: '−42%', label: 'Riduzione errori operativi' },
-      { metric: '3.2×', label: 'Velocità di risposta operatore' },
+      { metric: '−42%', label: 'Operational error reduction' },
+      { metric: '3.2×', label: 'Operator response speed' },
       { metric: '98%', label: 'Task completion rate' },
     ],
-    who: ['Piloti militari e civili', 'Controllori di traffico aereo', 'Operatori sistemi missione', 'Tecnici manutenzione'],
+    who: ['Military and civilian pilots', 'Air traffic controllers', 'Mission system operators', 'Maintenance technicians'],
     color: 'var(--teal)',
   },
   {
     id: 'healthcare',
     num: '02',
     icon: '⊕',
-    name: 'Healthcare & Medicale',
-    tag: 'Alta complessità',
-    headline: 'Interfacce che proteggono il paziente.',
-    body: 'Dispositivi medici, software clinico, sistemi di monitoraggio. Ogni pixel è una decisione che può influenzare una diagnosi. Lavoriamo con medici, infermieri e ingegneri biomedicali per ridurre l\'errore umano in corsia.',
+    name: 'Healthcare & Medical',
+    tag: 'High complexity',
+    headline: 'Interfaces that protect the patient.',
+    body: 'Medical devices, clinical software, monitoring systems. Every pixel is a decision that can affect a diagnosis. We work with doctors, nurses, and biomedical engineers to reduce human error at the bedside.',
     impact: [
-      { metric: '−61%', label: 'Errori di dosaggio rilevati' },
-      { metric: '2.8×', label: 'Efficienza workflow clinico' },
-      { metric: 'IEC 62366', label: 'Conformità certificativa' },
+      { metric: '−61%', label: 'Dosage errors detected' },
+      { metric: '2.8×', label: 'Clinical workflow efficiency' },
+      { metric: 'IEC 62366', label: 'Certification compliance' },
     ],
-    who: ['Medici specialisti', 'Infermieri di terapia intensiva', 'Radiologi', 'Farmacisti ospedalieri'],
+    who: ['Specialist physicians', 'ICU nurses', 'Radiologists', 'Hospital pharmacists'],
     color: '#E07B9A',
   },
   {
     id: 'energy',
     num: '03',
     icon: '⚡',
-    name: 'Energia & Utilities',
+    name: 'Energy & Utilities',
     tag: 'Industrial HMI',
-    headline: 'Control room che parlano la lingua degli operatori.',
-    body: 'SCADA, DCS, sistemi di monitoraggio di impianti critici. Gli operatori in control room gestiscono decine di variabili simultaneamente. Il nostro design riduce il carico cognitivo e migliora la situational awareness.',
+    headline: 'Control rooms that speak the language of operators.',
+    body: 'SCADA, DCS, critical plant monitoring systems. Operators in control rooms manage dozens of simultaneous variables. Our design reduces cognitive load and improves situational awareness.',
     impact: [
-      { metric: '−38%', label: 'Tempo di anomaly detection' },
-      { metric: '4.1×', label: 'Chiarezza alarming system' },
-      { metric: '+67%', label: 'SA score operatori' },
+      { metric: '−38%', label: 'Anomaly detection time' },
+      { metric: '4.1×', label: 'Alarm system clarity' },
+      { metric: '+67%', label: 'Operator SA score' },
     ],
-    who: ['Operatori di centrale', 'Supervisori di impianto', 'Ingegneri di processo', 'Safety managers'],
+    who: ['Plant operators', 'Shift supervisors', 'Process engineers', 'Safety managers'],
     color: 'var(--purple)',
   },
   {
     id: 'transport',
     num: '04',
     icon: '◎',
-    name: 'Trasporti',
-    tag: 'Mobilità avanzata',
-    headline: 'HMI per l\'operatore che non può permettersi distrazioni.',
-    body: 'Dal controllo ferroviario all\'automotive avanzato. Progettiamo per operatori in contesti ad alta workload dove l\'attenzione è la risorsa più scarsa. Semplicità che non banalizza la complessità.',
+    name: 'Transport',
+    tag: 'Advanced mobility',
+    headline: 'HMI for operators who cannot afford distraction.',
+    body: 'From rail control to advanced automotive. We design for operators in high-workload contexts where attention is the scarcest resource. Simplicity that does not oversimplify complexity.',
     impact: [
-      { metric: '−29%', label: 'Cognitive load misurato' },
+      { metric: '−29%', label: 'Measured cognitive load' },
       { metric: '99.4%', label: 'Critical alarm recognition' },
       { metric: '1.8×', label: 'Training time reduction' },
     ],
-    who: ['Macchinisti ferroviari', 'Gestori rete traffico', 'Test driver ADAS', 'Dispatchers logistica'],
+    who: ['Train drivers', 'Traffic network managers', 'ADAS test drivers', 'Logistics dispatchers'],
     color: '#6BC5E8',
   },
   {
     id: 'industry',
     num: '05',
     icon: '◈',
-    name: 'Industria 4.0',
-    tag: 'Automazione',
-    headline: 'Dove l\'umano e la macchina devono capirsi.',
-    body: 'Linee di produzione automatizzate, manutenzione AR/VR, digital twin. L\'automazione aumenta la produttività ma crea nuove sfide cognitive. Progettiamo l\'interfaccia dell\'interazione uomo-robot.',
+    name: 'Industry 4.0',
+    tag: 'Automation',
+    headline: 'Where humans and machines need to understand each other.',
+    body: 'Automated production lines, AR/VR maintenance, digital twins. Automation increases productivity but creates new cognitive challenges. We design the interface for human-robot interaction.',
     impact: [
       { metric: '+44%', label: 'OEE (Overall Equipment Effectiveness)' },
-      { metric: '−52%', label: 'Tempo medio di guasto' },
-      { metric: '3.6×', label: 'Onboarding operators' },
+      { metric: '−52%', label: 'Mean time to failure' },
+      { metric: '3.6×', label: 'Operator onboarding' },
     ],
-    who: ['Operatori di linea', 'Tecnici di manutenzione', 'Responsabili produzione', 'Quality managers'],
+    who: ['Line operators', 'Maintenance technicians', 'Production managers', 'Quality managers'],
     color: 'var(--teal)',
   },
   {
     id: 'security',
     num: '06',
     icon: '◉',
-    name: 'Sicurezza & Intelligence',
+    name: 'Security & Intelligence',
     tag: 'Mission-critical',
-    headline: 'Chiarezza decisionale sotto pressione estrema.',
-    body: 'Dashboard di analisi, sistemi di comando e controllo, interfacce per analisti intelligence. In questi contesti, l\'overload informativo è il nemico. Progettiamo per la decisione rapida e affidabile.',
+    headline: 'Decision clarity under extreme pressure.',
+    body: 'Analytics dashboards, command and control systems, interfaces for intelligence analysts. In these contexts, information overload is the enemy. We design for fast, reliable decision making.',
     impact: [
       { metric: '−45%', label: 'Decision latency' },
       { metric: '2.2×', label: 'Pattern recognition speed' },
       { metric: '+88%', label: 'Analyst confidence score' },
     ],
-    who: ['Analisti intelligence', 'Operatori sicurezza', 'Command & control', 'Cyber security ops'],
+    who: ['Intelligence analysts', 'Security operators', 'Command & control', 'Cyber security ops'],
     color: 'var(--purple)',
   },
 ]
@@ -120,14 +120,19 @@ export default function SectorsPage() {
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden" style={{ paddingTop: '8rem', paddingBottom: '6rem', background: 'var(--dark)' }}>
-        <div className="absolute inset-0">
-          <ThreeRings configs={SECTOR_RINGS} />
-        </div>
+      {/* Three.js rings */}
+      <div className="absolute inset-0">
+        <ThreeRings
+          className="opacity-80"
+          scrollY={scrollY}
+          scrollInfluence={0.003}
+        />
+      </div>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 65% 85% at 10% 60%, rgba(10,10,10,0.92) 0%, transparent 65%)', pointerEvents: 'none' }} />
         <div className="relative z-10 px-[10vw] w-full">
-          <AnimateInView variants={fadeUp}><p className="section-label mb-8">Settori</p></AnimateInView>
+          <AnimateInView variants={fadeUp}><p className="section-label mb-8">Sectors</p></AnimateInView>
           <SplitText
-            text="Dove opera OCTIMAL"
+            text="Where OCTIMAL operates"
             tag="h1"
             once={false}
             style={{
@@ -142,7 +147,7 @@ export default function SectorsPage() {
           />
           <AnimateInView variants={fadeUp} delay={0.35} className="mt-6">
             <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.85, maxWidth: '500px', fontWeight: 300 }}>
-              Specializziamo la nostra metodologia per ogni dominio critico. La complessità varia, il rigore resta invariato.
+              We adapt our methodology to each critical domain. Complexity changes, rigor stays the same.
             </p>
           </AnimateInView>
         </div>
@@ -238,9 +243,9 @@ export default function SectorsPage() {
 
       {/* ─── ALL SECTORS GRID ─── */}
       <section style={{ background: 'var(--dark)', padding: '10rem 10vw' }}>
-        <AnimateInView variants={fadeUp}><p className="section-label mb-4">Panoramica</p></AnimateInView>
+        <AnimateInView variants={fadeUp}><p className="section-label mb-4">Overview</p></AnimateInView>
         <SplitText
-          text="Sei settori critici, un metodo"
+          text="Six critical sectors, one method"
           tag="h2"
           once={false}
           style={{

@@ -669,11 +669,11 @@ export default function TipsPage() {
         <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <AnimateInView variants={fadeUp}>
             <p className="section-label" style={{ justifyContent: 'center', marginBottom: '2rem' }}>
-              Rimani aggiornato
+              Stay updated
             </p>
           </AnimateInView>
           <SplitText
-            text="Nuovi tip ogni due settimane."
+            text="New tips every two weeks."
             tag="h2"
             once={false}
             style={{
@@ -695,8 +695,8 @@ export default function TipsPage() {
                 lineHeight: 1.88,
               }}
             >
-              UX Tips, case study e insight su Human Factors e sistemi complessi.
-              Niente spam. Solo contenuto che vale il tuo tempo.
+              UX tips, case studies and insights on Human Factors and complex systems.
+              No spam. Only content worth your time.
             </p>
           </AnimateInView>
           <AnimateInView variants={fadeUp} delay={0.45} className="mt-10">
@@ -713,7 +713,7 @@ export default function TipsPage() {
             >
               <input
                 type="email"
-                placeholder="La tua email"
+                placeholder="Your email"
                 style={{
                   flex: 1,
                   background: 'transparent',
@@ -743,7 +743,7 @@ export default function TipsPage() {
                 }}
                 data-cursor
               >
-                Iscriviti →
+                Subscribe →
               </motion.button>
             </div>
           </AnimateInView>
