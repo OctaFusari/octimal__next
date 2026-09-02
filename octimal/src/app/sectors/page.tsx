@@ -16,7 +16,7 @@ const SECTORS = [
   {
     id: 'aviation',
     num: '01',
-    icon: '✈',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="m397-115-99-184-184-99 71-70 145 25 102-102-317-135 84-86 385 68 124-124q23-23 57-23t57 23q23 23 23 56.5T822-709L697-584l68 384-85 85-136-317-102 102 26 144-71 71Z"/></svg>,
     name: 'Aviation & Defense',
     tag: 'Safety-critical',
     headline: 'Where an interface error can cost lives.',
@@ -32,7 +32,7 @@ const SECTORS = [
   {
     id: 'healthcare',
     num: '02',
-    icon: '⊕',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M300-840q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 5-.5 10t-.5 10h-80q1-5 1-10v-10q0-60-40-100t-100-40q-47 0-87 26.5T518-666h-76q-15-41-55-67.5T300-760q-60 0-100 40t-40 100v10q0 5 1 10H81q0-5-.5-10t-.5-10q0-94 63-157t157-63Zm-88 480h112q32 31 70 67t86 79q48-43 86-79t70-67h113q-38 42-90 91T538-158l-58 52-58-52q-69-62-120.5-111T212-360Zm230 40q13 0 22.5-7.5T478-347l54-163 35 52q5 8 14 13t19 5h320v-80H623l-69-102q-6-9-15.5-13.5T518-640q-13 0-22.5 7.5T482-613l-54 162-34-51q-5-8-14-13t-19-5H40v80h297l69 102q6 9 15.5 13.5T442-320Zm38-167Z"/></svg>,
     name: 'Healthcare & Medical',
     tag: 'High complexity',
     headline: 'Interfaces that protect the patient.',
@@ -48,7 +48,7 @@ const SECTORS = [
   {
     id: 'energy',
     num: '03',
-    icon: '⚡',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M480-240q100 0 169-70t71-170v-240H480q-100 2-170 71t-70 169q0 100 70 170t170 70Zm-47-67 184-164q9-8 5-19t-16-13l-144-14 86-119q3-5 3.5-9.5T548-654q-4-5-10-4.5t-11 4.5L344-490q-9 8-5 19t16 13l144 14-87 119q-3 5-3 9.5t4 8.5q4 4 9.5 4t10.5-4Zm47 147q-56 0-105.5-17.5T284-227l-55 55q-6 6-13.5 9t-15.5 3q-17 0-28.5-11.5T160-200q0-8 3-15.5t9-13.5l55-55q-32-41-49.5-90.5T160-480q0-134 93-227t227-93h320v320q0 134-93 227t-227 93Zm0-320Z"/></svg>,
     name: 'Energy & Utilities',
     tag: 'Industrial HMI',
     headline: 'Control rooms that speak the language of operators.',
@@ -64,7 +64,7 @@ const SECTORS = [
   {
     id: 'transport',
     num: '04',
-    icon: '◎',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M341-204q17 8 31 15t28 13v84q-14-5-29-10.5T339-116q-45 18-91.5 27T152-80h-32v-80h32q48 0 91.5-10.5T341-204Zm97-362Zm-58-314h200v80h100q33 0 56.5 23.5T760-720v84q-18-2-37.5-3t-42.5-1v-80H280v113l200-53 101 27q-37 6-75 20.5T438-566l-236 62 46 149q11-10 22.5-19.5T293-395l41-42q17 19 33 37.5t33 36.5v99q-31-18-50.5-37L330-320q-28 27-61 46t-71 27l-85-273q-5-17 3-31t25-19l59-16v-134q0-33 23.5-56.5T280-800h100v-80ZM540-80q-8 0-14-6t-6-14v-51q-19-11-29.5-29T480-220v-240q0-52 48-76t152-24q108 0 154 23t46 77v240q0 21-10.5 39.5T840-151v51q0 8-6 14t-14 6h-40q-8 0-14-6t-6-14v-40H600v40q0 8-6 14t-14 6h-40Zm55-130q15 0 25-10t10-25q0-15-10-25t-25-10q-15 0-25 10t-10 25q0 14 10.5 24.5T595-210Zm170 0q15 0 25-10t10-25q0-15-10-25t-25-10q-15 0-25 10t-10 25q0 14 10.5 24.5T765-210ZM540-360h280v-80H540v80Z"/></svg>,
     name: 'Transport',
     tag: 'Advanced mobility',
     headline: 'HMI for operators who cannot afford distraction.',
@@ -80,7 +80,7 @@ const SECTORS = [
   {
     id: 'industry',
     num: '05',
-    icon: '◈',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M80-80v-481l280-119v80l200-80v120h320v480H80Zm80-80h640v-320H480v-82l-200 80v-78l-120 53v347Zm280-80h80v-160h-80v160Zm-160 0h80v-160h-80v160Zm320 0h80v-160h-80v160Zm280-320H680l40-320h120l40 320ZM160-160h640-640Z"/></svg>,
     name: 'Industry 4.0',
     tag: 'Automation',
     headline: 'Where humans and machines need to understand each other.',
@@ -96,7 +96,7 @@ const SECTORS = [
   {
     id: 'security',
     num: '06',
-    icon: '◉',
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>,
     name: 'Security & Intelligence',
     tag: 'Mission-critical',
     headline: 'Decision clarity under extreme pressure.',
@@ -209,7 +209,7 @@ export default function SectorsPage() {
 
               {/* Who we work with */}
               <div style={{ marginTop: '3rem' }}>
-                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '1rem' }}>Con chi lavoriamo</p>
+                <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '1rem' }}>With who we work</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {activeSector.who.map((w) => (
                     <span key={w} style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.8rem', padding: '0.35rem 0.9rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '2rem', color: 'rgba(240,237,232,0.6)' }}>{w}</span>
@@ -220,7 +220,7 @@ export default function SectorsPage() {
 
             {/* Right — impact metrics */}
             <div>
-              <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '2rem' }}>Impatto misurato</p>
+              <p style={{ fontFamily: 'var(--font-outfit)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '2rem' }}>Our impact</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {activeSector.impact.map((imp, i) => (
                   <motion.div

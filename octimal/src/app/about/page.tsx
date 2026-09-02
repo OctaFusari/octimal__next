@@ -169,7 +169,7 @@ export default function AboutPage() {
       <section style={{ background: 'var(--dark2)', padding: '10rem 10vw', position: 'relative', overflow: 'hidden' }}>
         <AnimateInView variants={fadeUp}><p className="section-label mb-4">Our story</p></AnimateInView>
         <SplitText
-          text="Twenty years in five moments"
+          text="Years of expertise and experience"
           tag="h2"
           once={false}
           style={{
